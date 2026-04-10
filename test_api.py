@@ -5,6 +5,8 @@ import logging
 
 
 
+
+
 def test_get_all_users():
     url = "http://192.168.31.169:8000/get_all_users"
 
@@ -55,3 +57,35 @@ def test_get_user_by_id():
     print(data)
     logging.info("Test passed successfully ✅")
 
+    def test_update_user():
+
+        url = "http://192.168.31.169:8000/update_user/10"
+        payload = {
+            "user_name": "Arun Krishna updated",
+            "user_id": 10,
+            "email": "arun.updated@gmail.com"
+        }
+        logging.info("Sending PUT request to update user")
+        response = requests.put(url, json=payload)
+
+
+        assert response.status_code == 200
+        logging.info(f"Received response with status code: {response.status_code}")
+
+        logging.info(f"Response data: {response.text}")
+        data = response.json()
+        print(data)
+
+def test_delete_user():
+    url = "http://192.168.31.169:8000/delete_user/10"
+
+
+    logging.info("Sending DELETE request to delete user")
+    response = requests.delete(url)
+
+    assert response.status_code == 200
+    logging.info(f"Received response with status code: {response.status_code}")
+    
+    logging.info(f"Response data: {response.text}")
+    data = response.json()
+    print(data)
