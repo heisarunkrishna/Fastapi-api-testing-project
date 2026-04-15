@@ -8,7 +8,7 @@ import logging
 
 
 def test_get_all_users():
-    url = "http://192.168.31.169:8000/get_all_users"
+    url = "http://192.168.31.169:10000/get_all_users"
 
     logging.info("Sending GET request to /get_all_users")
     response = requests.get(url)
@@ -22,7 +22,7 @@ def test_get_all_users():
 
 
 def test_create_user():
-    url = "http://192.168.31.169:8000//create_user"
+    url = "http://192.168.31.169:10000/create_user"
     payload = {
         "user_name": "Arun Krishna",
         "user_id": 10,
@@ -45,7 +45,7 @@ def test_create_user():
   
 
 def test_get_user_by_id():
-    url = "http://192.168.31.169:8000//get_user/10"
+    url = "http://192.168.31.169:10000//get_user/10"
     response = requests.get(url)
 
 
@@ -59,7 +59,7 @@ def test_get_user_by_id():
 
     def test_update_user():
 
-        url = "http://192.168.31.169:8000/update_user/10"
+        url = "http://192.168.31.169:10000/update_user/10"
         payload = {
             "user_name": "Arun Krishna updated",
             "user_id": 10,
@@ -77,7 +77,7 @@ def test_get_user_by_id():
         print(data)
 
 def test_delete_user():
-    url = "http://192.168.31.169:8000/delete_user/10"
+    url = "http://192.168.31.169:10000/delete_user/10"
 
 
     logging.info("Sending DELETE request to delete user")

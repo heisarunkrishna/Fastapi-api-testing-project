@@ -40,7 +40,7 @@ def create_user(user: User):
         "data": user
     }
 
-# GET - GET All USERS
+# GET - Get All Users
 @app.get("/get_all_users",  tags=["Users"])
 def get_users():
     return {
@@ -48,7 +48,7 @@ def get_users():
     }
 
 
-# GET - GET USER BY USER ID 
+# GET - Get user by user id 
 
 @app.get("/get_user/{user_id}", tags=["Users"])
 def get_user(user_id: int):
